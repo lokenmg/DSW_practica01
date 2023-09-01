@@ -19,10 +19,10 @@
 			</div>
 
             <div class="form-group">
-				<label for="telefono">Telefóno: </label>
+				<label for="telefono">Telefono: </label>
 				<input required name="telefono" type="numer" id="telefono" placeholder="Telefono" class="form-control">
 			</div>
-			<button type="submit" class="btn btn-success">Guardar</button>
+			<button type="submit" class="btn btn-success">Agregar</button>
 		</form>
 	</div>
 </div>
