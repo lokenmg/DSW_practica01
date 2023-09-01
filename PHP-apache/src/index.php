@@ -1,25 +1,31 @@
 <html>
-    <body>
-        <?php
-            for ($i = 0; $i < 10; $i++) {
-                echo "Hello World! <br>";
-            }
-            try {
-                $url = "pgsql:host=172.17.0.3;port=5432;dbname=mydb;";
-                // make a database connection
-                $pdo = new PDO($url, "postgres", "postgres", [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-            
-                if ($pdo) {
-                    echo "Connected to the $db database successfully!";
-                }
-            } catch (PDOException $e) {
-                die($e->getMessage());
-            } finally {
-                if ($pdo) {
-                    $pdo = null;
-                }
-            }
-            phpinfo();
-        ?>
-    </body>
+<div class="row">
+	<div class="col-12">
+		<h1>Agregar</h1>
+		<form action="alta.php" method="POST">
+
+            <div class="form-group">
+				<label for="clave">Clave: </label>
+				<input required name="clave" type="numer" id="clave" placeholder="Clave" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="nombre">Nombre: </label>
+				<input required name="nombre" type="text" id="nombre" placeholder="Nombre" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="direccion">Dirección: </label>
+				<input required name="direccion" type="text" id="direccion" placeholder="Direccion" class="form-control">
+			</div>
+
+            <div class="form-group">
+				<label for="telefono">Telefóno: </label>
+				<input required name="telefono" type="numer" id="telefono" placeholder="Telefono" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+	</div>
+</div>
+
+</body>
 </html>
