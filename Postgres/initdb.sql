@@ -1,12 +1,14 @@
---create user myuser with password 'mypass';
 CREATE USER myuser;
 CREATE DATABASE mydb;
-
 GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
-CREATE TABLE ejemplo
+ALTER DATABASE mydb OWNER TO myuser;
+
+\connect mydb
+create table empleado
 (
-	clave integer NOT NULL,
-	nombre character varying,
-	direccion character varying,
-	CONSTRAINT pk_clave PRIMARY KEY (clave) 
+    clave integer NOT NULL,
+    nombre character varying,
+    direccion character varying,
+    telefeno character varying
 );
+ALTER TABLE empleado OWNER TO myuser;
